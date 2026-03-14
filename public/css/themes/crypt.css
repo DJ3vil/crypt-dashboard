@@ -1,0 +1,125 @@
+/* Crypt — Gothic Glassmorphism Theme
+   Deep blacks, frosted glass cards, purple glow, dark red accents */
+
+:root {
+  /* Backgrounds */
+  --bg-primary: #06060b;
+  --bg-secondary: rgba(12, 12, 20, 0.9);
+
+  /* Glass card properties */
+  --glass-bg: rgba(18, 18, 32, 0.45);
+  --glass-border: rgba(139, 63, 160, 0.12);
+  --glass-shimmer: rgba(139, 63, 160, 0.06);
+  --glass-icon-bg: rgba(139, 63, 160, 0.08);
+  --glass-btn-bg: rgba(255, 255, 255, 0.03);
+  --glass-btn-hover: rgba(139, 63, 160, 0.12);
+  --bg-card: rgba(18, 18, 32, 0.45);
+  --bg-card-hover: rgba(26, 26, 46, 0.6);
+
+  /* Accents */
+  --accent-primary: #9b4dca;
+  --accent-secondary: #b83250;
+  --accent-glow: rgba(155, 77, 202, 0.35);
+
+  /* Status */
+  --status-running: #4ade80;
+  --status-stopped: #f87171;
+  --status-paused: #fbbf24;
+
+  /* Text */
+  --text-primary: #ede6f2;
+  --text-secondary: #9990a8;
+  --text-muted: #635b72;
+
+  /* Borders & Shadows */
+  --border-color: rgba(155, 77, 202, 0.1);
+  --glow-shadow:
+    0 4px 30px rgba(155, 77, 202, 0.15),
+    0 0 60px rgba(155, 77, 202, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+  /* Fonts */
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Atmospheric background gradients */
+body {
+  background-image:
+    radial-gradient(ellipse at 15% 50%, rgba(155, 77, 202, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 20%, rgba(184, 50, 80, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 90%, rgba(155, 77, 202, 0.02) 0%, transparent 40%);
+}
+
+/* Header gradient accent line */
+.header {
+  background: rgba(12, 12, 20, 0.85);
+  backdrop-filter: blur(16px);
+  border-image: linear-gradient(90deg, transparent, var(--accent-primary), var(--accent-secondary), transparent) 1;
+}
+
+/* System bar glass */
+.system-bar {
+  background: rgba(12, 12, 20, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+/* Ring colors with gradient */
+.ring-fill {
+  stroke: var(--accent-primary);
+}
+
+/* Disk bar gradient */
+.disk-bar-fill {
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+}
+
+/* Group header with accent underline */
+.group-header {
+  border-image: linear-gradient(90deg, var(--border-color) 0%, var(--accent-primary) 50%, var(--border-color) 100%) 1;
+}
+
+/* Card hover: enhanced glass effect */
+.card:hover {
+  background: rgba(26, 26, 46, 0.55);
+  border-color: rgba(155, 77, 202, 0.35);
+  backdrop-filter: blur(16px);
+}
+
+/* Running cards get subtle green tint on hover */
+.card:has(.card-status.running):hover {
+  box-shadow:
+    0 4px 30px rgba(155, 77, 202, 0.12),
+    0 0 40px rgba(74, 222, 128, 0.06);
+}
+
+/* Stopped cards get subtle red tint on hover */
+.card:has(.card-status.exited):hover {
+  box-shadow:
+    0 4px 30px rgba(248, 113, 113, 0.1),
+    0 0 40px rgba(248, 113, 113, 0.04);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(155, 77, 202, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(155, 77, 202, 0.4);
+}
+
+/* Selection */
+::selection {
+  background: rgba(155, 77, 202, 0.4);
+  color: var(--text-primary);
+}

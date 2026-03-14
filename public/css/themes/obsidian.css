@@ -1,0 +1,61 @@
+/* Obsidian — Dark Slate with Indigo accents */
+
+:root {
+  --bg-primary: #0f1117;
+  --bg-secondary: rgba(18, 20, 30, 0.9);
+
+  --glass-bg: rgba(28, 32, 48, 0.4);
+  --glass-border: rgba(99, 102, 241, 0.1);
+  --glass-shimmer: rgba(99, 102, 241, 0.05);
+  --glass-icon-bg: rgba(99, 102, 241, 0.07);
+  --glass-btn-bg: rgba(255, 255, 255, 0.03);
+  --glass-btn-hover: rgba(99, 102, 241, 0.1);
+  --bg-card: rgba(28, 32, 48, 0.4);
+  --bg-card-hover: rgba(36, 40, 60, 0.55);
+
+  --accent-primary: #818cf8;
+  --accent-secondary: #6366f1;
+  --accent-glow: rgba(129, 140, 248, 0.3);
+
+  --status-running: #34d399;
+  --status-stopped: #f87171;
+  --status-paused: #fbbf24;
+
+  --text-primary: #e2e4ea;
+  --text-secondary: #8b90a0;
+  --text-muted: #585e70;
+
+  --border-color: rgba(99, 102, 241, 0.08);
+  --glow-shadow:
+    0 4px 25px rgba(99, 102, 241, 0.12),
+    0 0 50px rgba(99, 102, 241, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse at 30% 60%, rgba(99, 102, 241, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 20%, rgba(129, 140, 248, 0.03) 0%, transparent 50%);
+}
+
+.header {
+  background: rgba(18, 20, 30, 0.85);
+  backdrop-filter: blur(16px);
+  border-image: linear-gradient(90deg, transparent, var(--accent-primary), transparent) 1;
+}
+
+.system-bar {
+  background: rgba(18, 20, 30, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+.disk-bar-fill {
+  background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
+}
+
+.group-header {
+  border-image: linear-gradient(90deg, var(--border-color), var(--accent-primary), var(--border-color)) 1;
+}

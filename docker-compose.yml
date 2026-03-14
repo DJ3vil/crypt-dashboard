@@ -1,0 +1,22 @@
+services:
+  crypt:
+    build: .
+    container_name: crypt-dashboard
+    restart: unless-stopped
+    ports:
+      - "3080:3000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/appdata
+      # Optional: Nginx Proxy Manager DB for auto-detecting proxy URLs
+      # - /path/to/NginxProxyManager/database.sqlite:/data/npm.sqlite:ro
+      # Optional: System metrics (CPU, RAM, temp, disk)
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      # Optional: Mount disks for storage monitoring
+      # - /mnt/disk1:/mnt/disk1:ro
+    environment:
+      - TZ=Europe/Berlin
+      # - SERVER_IP=192.168.1.100  # Your server IP for link generation
+      - HOST_PROC=/host/proc
+      - HOST_SYS=/host/sys

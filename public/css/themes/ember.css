@@ -1,0 +1,30 @@
+/* Ember — Warm Dark with Orange/Red fire tones */
+:root {
+  --bg-primary: #0e0908;
+  --bg-secondary: rgba(18, 12, 10, 0.9);
+  --glass-bg: rgba(30, 18, 14, 0.45);
+  --glass-border: rgba(220, 90, 30, 0.1);
+  --glass-shimmer: rgba(220, 90, 30, 0.05);
+  --glass-icon-bg: rgba(220, 90, 30, 0.07);
+  --glass-btn-bg: rgba(255, 255, 255, 0.03);
+  --glass-btn-hover: rgba(220, 90, 30, 0.1);
+  --bg-card: rgba(30, 18, 14, 0.45);
+  --accent-primary: #ea580c;
+  --accent-secondary: #dc2626;
+  --accent-glow: rgba(234, 88, 12, 0.3);
+  --status-running: #4ade80;
+  --status-stopped: #f87171;
+  --status-paused: #fbbf24;
+  --text-primary: #f5e6dc;
+  --text-secondary: #a8897a;
+  --text-muted: #6b5548;
+  --border-color: rgba(220, 90, 30, 0.08);
+  --glow-shadow: 0 4px 25px rgba(234, 88, 12, 0.12), 0 0 50px rgba(234, 88, 12, 0.04);
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Inter', sans-serif;
+}
+body { background-image: radial-gradient(ellipse at 30% 70%, rgba(234, 88, 12, 0.04) 0%, transparent 50%), radial-gradient(ellipse at 70% 20%, rgba(220, 38, 38, 0.03) 0%, transparent 50%); }
+.header { background: rgba(18, 12, 10, 0.85); backdrop-filter: blur(16px); border-image: linear-gradient(90deg, transparent, #ea580c, #dc2626, transparent) 1; }
+.system-bar { background: rgba(18, 12, 10, 0.7); backdrop-filter: blur(8px); }
+.disk-bar-fill { background: linear-gradient(90deg, #dc2626, #ea580c); }
+.group-header { border-image: linear-gradient(90deg, var(--border-color), #ea580c, var(--border-color)) 1; }

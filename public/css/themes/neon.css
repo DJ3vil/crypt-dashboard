@@ -1,0 +1,32 @@
+/* Neon — Cyberpunk neon green on black */
+:root {
+  --bg-primary: #050505;
+  --bg-secondary: rgba(8, 10, 8, 0.9);
+  --glass-bg: rgba(10, 18, 10, 0.45);
+  --glass-border: rgba(0, 255, 100, 0.08);
+  --glass-shimmer: rgba(0, 255, 100, 0.04);
+  --glass-icon-bg: rgba(0, 255, 100, 0.05);
+  --glass-btn-bg: rgba(255, 255, 255, 0.02);
+  --glass-btn-hover: rgba(0, 255, 100, 0.08);
+  --bg-card: rgba(10, 18, 10, 0.45);
+  --accent-primary: #00ff64;
+  --accent-secondary: #00cc50;
+  --accent-glow: rgba(0, 255, 100, 0.25);
+  --status-running: #00ff64;
+  --status-stopped: #ff3333;
+  --status-paused: #ffcc00;
+  --text-primary: #d0f5dc;
+  --text-secondary: #5a8a6a;
+  --text-muted: #345542;
+  --border-color: rgba(0, 255, 100, 0.06);
+  --glow-shadow: 0 4px 25px rgba(0, 255, 100, 0.1), 0 0 50px rgba(0, 255, 100, 0.03);
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+body { background-image: radial-gradient(ellipse at 50% 50%, rgba(0, 255, 100, 0.02) 0%, transparent 60%); }
+.header { background: rgba(8, 10, 8, 0.9); backdrop-filter: blur(16px); border-image: linear-gradient(90deg, transparent, #00ff64, transparent) 1; }
+.system-bar { background: rgba(8, 10, 8, 0.75); backdrop-filter: blur(8px); }
+.disk-bar-fill { background: #00ff64; }
+.group-header { border-image: linear-gradient(90deg, var(--border-color), #00ff64, var(--border-color)) 1; }
+.card-name { font-family: 'Inter', monospace; }
+.meta-image { color: #00ff64; opacity: 0.5; }

@@ -1,0 +1,139 @@
+/* 3vil — Light Red accents on deep black. Sharp contrast, nothing blends. */
+
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+:root {
+  /* Background: true dark, no warmth */
+  --bg-primary: #0d0d0d;
+  --bg-secondary: rgba(16, 16, 16, 0.95);
+
+  /* Cards: clearly separated from bg */
+  --glass-bg: rgba(28, 28, 28, 0.6);
+  --glass-border: rgba(255, 100, 100, 0.08);
+  --glass-shimmer: rgba(255, 100, 100, 0.03);
+  --glass-icon-bg: rgba(255, 100, 100, 0.05);
+  --glass-btn-bg: rgba(255, 255, 255, 0.03);
+  --glass-btn-hover: rgba(255, 100, 100, 0.08);
+  --bg-card: rgba(28, 28, 28, 0.6);
+
+  /* Accent: light/bright red — not dark crimson */
+  --accent-primary: #dc2626;
+  --accent-secondary: #ef4444;
+  --accent-glow: rgba(248, 113, 113, 0.18);
+
+  /* Status: standard, clear */
+  --status-running: #4ade80;
+  --status-stopped: #6b7280;
+  --status-paused: #fbbf24;
+
+  /* Text: cool neutral greys */
+  --text-primary: #e5e5e5;
+  --text-secondary: #8a8a8a;
+  --text-muted: #525252;
+
+  /* Borders */
+  --border-color: rgba(255, 255, 255, 0.06);
+  --glow-shadow:
+    0 4px 24px rgba(248, 113, 113, 0.1),
+    0 0 40px rgba(248, 113, 113, 0.03);
+
+  /* Fonts */
+  --font-heading: 'MedievalSharp', 'Cinzel', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Faint red atmosphere at edges */
+body {
+  background-image:
+    radial-gradient(ellipse at 50% 100%, rgba(248, 113, 113, 0.03) 0%, transparent 45%),
+    radial-gradient(ellipse at 10% 15%, rgba(248, 113, 113, 0.015) 0%, transparent 35%);
+}
+
+/* Header */
+.header {
+  background: rgba(14, 14, 14, 0.95);
+  backdrop-filter: blur(16px);
+  border-image: linear-gradient(90deg, transparent 15%, #dc262640 45%, #dc2626 50%, #dc262640 55%, transparent 85%) 1;
+}
+
+.logo h1 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.2em;
+  text-shadow: 0 0 10px rgba(248, 113, 113, 0.25);
+}
+
+.logo svg {
+  filter: drop-shadow(0 0 6px rgba(248, 113, 113, 0.35));
+}
+
+/* System bar */
+.system-bar {
+  background: rgba(14, 14, 14, 0.9);
+  backdrop-filter: blur(8px);
+}
+
+.ring-fill { stroke: #dc2626; }
+.disk-bar-fill { background: linear-gradient(90deg, #dc2626, #ef4444); }
+
+/* Groups */
+.group-header {
+  border-image: linear-gradient(90deg, transparent, #dc262630 40%, #dc262680 50%, #dc262630 60%, transparent) 1;
+}
+
+.group-name { font-family: var(--font-heading); }
+
+/* Cards */
+.card:hover {
+  border-color: rgba(248, 113, 113, 0.2);
+  background: rgba(36, 36, 36, 0.65);
+}
+
+.card.alive {
+  animation: cardIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards, evilBreathe 5s ease-in-out 0.5s infinite;
+}
+
+@keyframes evilBreathe {
+  0%, 100% { box-shadow: 0 0 0 transparent; }
+  50% { box-shadow: 0 0 10px rgba(248, 113, 113, 0.06); }
+}
+
+.card::before {
+  background: conic-gradient(from var(--border-angle, 0deg), transparent 35%, #dc262650 48%, #dc2626 50%, #dc262650 52%, transparent 65%);
+}
+
+/* Icon hover */
+.card-icon-wrap.clickable:hover {
+  border-color: #dc2626;
+  box-shadow: 0 0 12px rgba(248, 113, 113, 0.2);
+}
+
+/* Accent stripe — theme red, decorative */
+.card-accent.running { background: linear-gradient(90deg, #dc2626 0%, transparent 70%); }
+.card-accent.exited, .card-accent.dead { background: linear-gradient(90deg, var(--status-stopped) 0%, transparent 70%); }
+
+/* Network */
+.net-dot { background: #dc2626; }
+
+/* Buttons */
+.card-btn.btn-start:hover { border-color: var(--status-running); color: var(--status-running); }
+.card-btn.btn-stop:hover { border-color: var(--status-stopped); color: var(--status-stopped); }
+.card-btn.btn-restart:hover { border-color: #dc2626; color: #dc2626; }
+
+/* Tags */
+.port-tag { color: #dc2626; background: rgba(248, 113, 113, 0.06); }
+.meta-image { color: var(--text-muted); }
+
+/* Action feedback */
+.card.action-success { border-color: var(--status-running) !important; box-shadow: 0 0 16px rgba(74, 222, 128, 0.12); }
+.card.action-error { border-color: #ef4444 !important; box-shadow: 0 0 16px rgba(239, 68, 68, 0.12); }
+
+/* Quick links */
+.quick-link:hover { box-shadow: 0 4px 10px rgba(248, 113, 113, 0.15); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(248, 113, 113, 0.12); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(248, 113, 113, 0.3); }
+
+::selection { background: rgba(248, 113, 113, 0.25); color: #e5e5e5; }

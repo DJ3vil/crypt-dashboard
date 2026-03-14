@@ -1,0 +1,30 @@
+/* Gold — Luxurious dark with amber/gold accents */
+:root {
+  --bg-primary: #0a0804;
+  --bg-secondary: rgba(16, 14, 8, 0.9);
+  --glass-bg: rgba(28, 24, 14, 0.4);
+  --glass-border: rgba(245, 158, 11, 0.1);
+  --glass-shimmer: rgba(245, 158, 11, 0.05);
+  --glass-icon-bg: rgba(245, 158, 11, 0.07);
+  --glass-btn-bg: rgba(255, 255, 255, 0.03);
+  --glass-btn-hover: rgba(245, 158, 11, 0.1);
+  --bg-card: rgba(28, 24, 14, 0.4);
+  --accent-primary: #f59e0b;
+  --accent-secondary: #d97706;
+  --accent-glow: rgba(245, 158, 11, 0.3);
+  --status-running: #4ade80;
+  --status-stopped: #f87171;
+  --status-paused: #fbbf24;
+  --text-primary: #f5ecd6;
+  --text-secondary: #b0a080;
+  --text-muted: #706248;
+  --border-color: rgba(245, 158, 11, 0.08);
+  --glow-shadow: 0 4px 25px rgba(245, 158, 11, 0.12), 0 0 50px rgba(245, 158, 11, 0.04);
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Inter', sans-serif;
+}
+body { background-image: radial-gradient(ellipse at 25% 55%, rgba(245, 158, 11, 0.04) 0%, transparent 50%), radial-gradient(ellipse at 75% 25%, rgba(217, 119, 6, 0.03) 0%, transparent 50%); }
+.header { background: rgba(16, 14, 8, 0.85); backdrop-filter: blur(16px); border-image: linear-gradient(90deg, transparent, #f59e0b, #d97706, transparent) 1; }
+.system-bar { background: rgba(16, 14, 8, 0.7); backdrop-filter: blur(8px); }
+.disk-bar-fill { background: linear-gradient(90deg, #d97706, #f59e0b); }
+.group-header { border-image: linear-gradient(90deg, var(--border-color), #f59e0b, var(--border-color)) 1; }

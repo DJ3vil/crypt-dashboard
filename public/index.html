@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypt — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/themes/crypt.css" id="theme-link">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+          <path d="M12 2C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2 13h-4v-1h4v1zm0-2h-4v-1h4v1zm-1.5-3.59V12h-1V9.41L9.67 7.59l.71-.71L12 8.5l1.62-1.62.71.71-1.83 1.82z"/>
+        </svg>
+        <h1>Crypt</h1>
+      </div>
+      <span class="uptime" id="uptime"></span>
+    </div>
+    <div class="header-right">
+      <!-- Quick Links -->
+      <!-- Search -->
+      <div class="search-wrap" id="search-wrap">
+        <button class="search-toggle" id="search-toggle" title="Suche">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <input type="text" class="search-input" id="search-input" placeholder="Container suchen..." autocomplete="off">
+      </div>
+      <nav class="quick-links" id="quick-links">
+        <!-- Quick links are auto-generated from environment or can be customized -->
+      </nav>
+      <button class="compact-toggle" id="compact-toggle" title="Kompakt-Modus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></button>
+      <select id="theme-select" class="theme-select" title="Theme"></select>
+    </div>
+  </header>
+
+  <!-- System Bar -->
+  <section class="system-bar" id="system-bar">
+    <div class="metric" id="metric-cpu">
+      <div class="metric-ring">
+        <svg viewBox="0 0 36 36">
+          <path class="ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+          <path class="ring-fill" id="cpu-ring" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+        </svg>
+        <span class="ring-value" id="cpu-value">0%</span>
+      </div>
+      <span class="metric-label">CPU</span>
+    </div>
+    <div class="metric" id="metric-memory">
+      <div class="metric-ring">
+        <svg viewBox="0 0 36 36">
+          <path class="ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+          <path class="ring-fill" id="mem-ring" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+        </svg>
+        <span class="ring-value" id="mem-value">0%</span>
+      </div>
+      <span class="metric-label">RAM</span>
+    </div>
+    <div class="metric" id="metric-temp">
+      <div class="metric-ring">
+        <svg viewBox="0 0 36 36">
+          <path class="ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+          <path class="ring-fill" id="temp-ring" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+        </svg>
+        <span class="ring-value" id="temp-value">--</span>
+      </div>
+      <span class="metric-label">Temp</span>
+    </div>
+    <div class="disk-bars" id="disk-bars"></div>
+  </section>
+
+  <!-- Container Grid -->
+  <main class="container-grid" id="container-grid">
+    <div class="loading">Erwecke die Geister...</div>
+  </main>
+
+  <!-- Compact Context Menu -->
+  <div class="compact-ctx-menu" id="compactCtxMenu">
+    <div class="compact-ctx-item" id="cctx-open"><span class="ctx-icon">🌐</span>WebUI</div>
+    <div class="compact-ctx-sep"></div>
+    <div class="compact-ctx-item" id="cctx-start"><span class="ctx-icon">▶</span>Start</div>
+    <div class="compact-ctx-item" id="cctx-stop"><span class="ctx-icon">⏹</span>Stop</div>
+    <div class="compact-ctx-item" id="cctx-restart"><span class="ctx-icon">🔄</span>Restart</div>
+  </div>
+
+  <script src="/js/components/system-bar.js"></script>
+  <script src="/js/components/container-card.js"></script>
+  <script src="/js/components/group-section.js"></script>
+  <script src="/js/components/controls.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

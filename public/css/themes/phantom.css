@@ -1,0 +1,30 @@
+/* Phantom — Monochrome grey, no color distractions */
+:root {
+  --bg-primary: #0c0c0c;
+  --bg-secondary: rgba(14, 14, 14, 0.9);
+  --glass-bg: rgba(22, 22, 22, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-shimmer: rgba(255, 255, 255, 0.03);
+  --glass-icon-bg: rgba(255, 255, 255, 0.04);
+  --glass-btn-bg: rgba(255, 255, 255, 0.03);
+  --glass-btn-hover: rgba(255, 255, 255, 0.06);
+  --bg-card: rgba(22, 22, 22, 0.5);
+  --accent-primary: #a0a0a0;
+  --accent-secondary: #707070;
+  --accent-glow: rgba(180, 180, 180, 0.15);
+  --status-running: #4ade80;
+  --status-stopped: #f87171;
+  --status-paused: #fbbf24;
+  --text-primary: #d4d4d4;
+  --text-secondary: #808080;
+  --text-muted: #505050;
+  --border-color: rgba(255, 255, 255, 0.05);
+  --glow-shadow: 0 4px 20px rgba(255, 255, 255, 0.04), 0 0 40px rgba(255, 255, 255, 0.02);
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+body { background-image: none; }
+.header { background: rgba(14, 14, 14, 0.9); backdrop-filter: blur(16px); border-image: linear-gradient(90deg, transparent, #505050, transparent) 1; }
+.system-bar { background: rgba(14, 14, 14, 0.75); backdrop-filter: blur(8px); }
+.disk-bar-fill { background: #808080; }
+.group-header { border-image: linear-gradient(90deg, var(--border-color), #505050, var(--border-color)) 1; }
