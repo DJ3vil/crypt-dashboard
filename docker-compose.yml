@@ -1,5 +1,6 @@
 services:
   crypt:
+    image: ghcr.io/dj3vil/crypt-dashboard:latest
     build: .
     container_name: crypt-dashboard
     restart: unless-stopped
