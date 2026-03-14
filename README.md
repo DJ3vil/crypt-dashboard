@@ -28,20 +28,73 @@ docker compose up -d
 
 Open **http://localhost:3080**
 
-## Docker Labels
+## Adding Containers
 
-Crypt auto-discovers containers with `homepage.*` labels:
+Crypt discovers containers automatically — no config files needed. Just add Docker labels and they appear on the dashboard.
+
+### Step 1: Add Labels to Your Container
+
+Add `homepage.*` labels to your `docker-compose.yml`:
 
 ```yaml
-labels:
-  homepage.group: Media          # Group name
-  homepage.name: Plex            # Display name
-  homepage.icon: plex.png        # Icon from dashboard-icons or MDI
-  homepage.href: http://ip:32400 # WebUI URL
-  homepage.description: Media Server
+services:
+  plex:
+    image: plexinc/pms-docker
+    ports:
+      - "32400:32400"
+    labels:
+      homepage.name: Plex
+      homepage.group: Media
+      homepage.icon: plex.png
+      homepage.href: http://10.10.5.2:32400
+      homepage.description: Media Server
 ```
 
-Icons are loaded from [dashboard-icons](https://github.com/homarr-labs/dashboard-icons). Use the filename without extension (e.g., `plex`, `sonarr`) or MDI icons with `mdi-` prefix.
+The container will appear on the dashboard on the next refresh (polling interval is a few seconds).
+
+### Step 2: Customize via the UI (Optional)
+
+Click the **gear icon** on any container card to open the settings panel. You can override:
+
+| Setting | Description |
+|---------|-------------|
+| **Name** | Display name (overrides `homepage.name`) |
+| **Icon** | Icon identifier or URL (overrides `homepage.icon`) |
+| **URL** | WebUI link (overrides `homepage.href`) |
+| **Description** | Short info text (overrides `homepage.description`) |
+| **Restart Policy** | `no`, `always`, `unless-stopped`, or `on-failure` |
+
+UI overrides are saved to `/appdata/settings.json` and persist across restarts.
+
+### Label Reference
+
+| Label | Required | Description | Default |
+|-------|----------|-------------|---------|
+| `homepage.name` | **Yes** | Display name — container is hidden without this | — |
+| `homepage.group` | No | Group name for organizing containers | `Ungrouped` |
+| `homepage.icon` | No | Icon (see below) | First letter of name |
+| `homepage.href` | No | WebUI URL | No link |
+| `homepage.description` | No | Short description | Container name |
+
+### Icons
+
+Icons can be specified in three ways:
+
+| Format | Example | Source |
+|--------|---------|--------|
+| Filename | `plex.png`, `sonarr`, `radarr` | [dashboard-icons](https://github.com/homarr-labs/dashboard-icons) |
+| MDI prefix | `mdi-music-note`, `mdi-movie` | Material Design Icons |
+| Full URL | `http://example.com/icon.svg` | Any URL |
+
+Browse available icons at [dashboard-icons](https://github.com/homarr-labs/dashboard-icons). Use the filename with or without extension.
+
+### Groups
+
+Containers are organized into collapsible groups based on the `homepage.group` label. Groups are sorted alphabetically, and each group shows a running/total count (e.g., `3/5`). Click a group header to collapse or expand it — the state persists in your browser.
+
+### Hiding Containers
+
+A container only appears on the dashboard if it has the `homepage.name` label. To hide a container, simply don't add that label — or remove it.
 
 ## Configuration
 
