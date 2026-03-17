@@ -132,7 +132,23 @@ Click the grid icon in the header to toggle compact mode:
 
 ## Screenshots
 
-*Coming soon*
+### Default Theme (Crypt)
+![Dark Skin](screenshots/dark_skin.png)
+
+### 3vil Theme
+![3vil Skin](screenshots/evil_skin.png)
+
+### Light Theme
+![White Skin](screenshots/white_skin.png)
+
+### Compact Mode
+![Compact Mode](screenshots/compact.png)
+
+### Search (Ctrl+K)
+![Search](screenshots/search.png)
+
+### Container Settings
+![Settings Menu](screenshots/settings_menu.png)
 
 ## License
 
