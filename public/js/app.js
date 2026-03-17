@@ -244,6 +244,7 @@ function filterCards(query) {
   showSkeleton();
   initThemes();
   initSearch();
+  loadShortcuts();
   await Promise.all([refreshContainers(), refreshSystem()]);
 
   const grid = document.getElementById('container-grid');

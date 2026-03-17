@@ -5,7 +5,7 @@ const Dockerode = require('dockerode');
 const { getContainers, startContainer, stopContainer, restartContainer } = require('../services/docker');
 const { resolveUrl } = require('../services/npm-proxy');
 const { getSystemInfo } = require('../services/system');
-const { applyOverrides, getOverrides, setOverrides } = require('../services/settings');
+const { applyOverrides, getOverrides, setOverrides, getShortcuts, setShortcuts } = require('../services/settings');
 
 const docker = new Dockerode({ socketPath: '/var/run/docker.sock' });
 const router = express.Router();
@@ -132,6 +132,23 @@ router.get('/themes', (req, res) => {
     res.json(files);
   } catch {
     res.json(['crypt']);
+  }
+});
+
+// GET /api/shortcuts
+router.get('/shortcuts', (req, res) => {
+  res.json(getShortcuts());
+});
+
+// PUT /api/shortcuts
+router.put('/shortcuts', (req, res) => {
+  try {
+    const shortcuts = req.body;
+    if (!Array.isArray(shortcuts)) return res.status(400).json({ error: 'Expected array' });
+    setShortcuts(shortcuts);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 });
 

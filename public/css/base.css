@@ -49,6 +49,26 @@ body {
 }
 .quick-link img, .quick-link svg { opacity: 0.7; transition: opacity 0.2s; }
 .quick-link:hover img, .quick-link:hover svg { opacity: 1; }
+.quick-link-add { opacity: 0.4; border-style: dashed; cursor: pointer; }
+.quick-link-add:hover { opacity: 1; }
+
+/* Shortcut Modal */
+.shortcut-modal-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+}
+.shortcut-modal {
+  background: var(--card-bg, #1a1a2e); border: 1px solid var(--glass-border, #333);
+  border-radius: 12px; padding: 1.2rem; width: 320px; max-width: 90vw;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.shortcut-modal .settings-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; }
+.shortcut-modal .settings-form { display: flex; flex-direction: column; gap: 0.5rem; }
+.shortcut-modal-actions { display: flex; gap: 0.5rem; margin-top: 0.8rem; }
+.shortcut-modal-actions .settings-save { flex: 1; }
+.shortcut-delete { background: #8b2252 !important; }
+.shortcut-delete:hover { background: #a52a6a !important; }
 
 /* Search */
 .search-wrap {

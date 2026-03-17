@@ -60,4 +60,18 @@ function applyOverrides(container) {
   return container;
 }
 
-module.exports = { getOverrides, setOverrides, applyOverrides };
+// Get shortcuts list
+function getShortcuts() {
+  const data = load();
+  return data._shortcuts || [];
+}
+
+// Save shortcuts list
+function setShortcuts(shortcuts) {
+  const data = load();
+  data._shortcuts = shortcuts;
+  cache = data;
+  save();
+}
+
+module.exports = { getOverrides, setOverrides, applyOverrides, getShortcuts, setShortcuts };
