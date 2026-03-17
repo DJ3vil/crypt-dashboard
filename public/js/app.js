@@ -218,7 +218,7 @@ function initSearch() {
 
 function filterCards(query) {
   const q = query.toLowerCase().trim();
-  const cards = document.querySelectorAll('.card');
+  const cards = document.querySelectorAll('.card-flip-container');
   const groups = document.querySelectorAll('.group-section');
 
   cards.forEach(card => {
@@ -234,7 +234,7 @@ function filterCards(query) {
 
   // Hide empty groups
   groups.forEach(group => {
-    const visibleCards = group.querySelectorAll('.card:not(.search-hidden)');
+    const visibleCards = group.querySelectorAll('.card-flip-container:not(.search-hidden)');
     group.classList.toggle('search-hidden', q && visibleCards.length === 0);
   });
 }

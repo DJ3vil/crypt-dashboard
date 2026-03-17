@@ -96,7 +96,7 @@ body {
 .search-input:focus { border-color: var(--accent-primary); }
 
 /* Card hidden by search */
-.card.search-hidden {
+.card-flip-container.search-hidden {
   display: none;
 }
 
